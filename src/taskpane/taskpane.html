@@ -1,0 +1,109 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. -->
+<!-- Excel Add-in for worksheet and workbook splitting functionality -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Utilities Add-in</title>
+    <!-- Office JavaScript API -->
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+    <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui#/. -->
+    <link rel="stylesheet" href="https://res-1.cdn.office.net/files/fabric-cdn-prod_20230815.002/office-ui-fabric-core/11.1.0/css/fabric.min.css">
+    <!-- Template styles -->
+    <link href="taskpane.css" rel="stylesheet" type="text/css">
+</head>
+<body class="ms-font-m ms-welcome ms-Fabric">
+    <header class="ms-welcome__header ms-bgColor-neutralLighter">
+        <img width="60" height="60" src="../../assets/icon-64.png" alt="xlsx_utilities" title="xlsx_utilities">
+        <h1 class="ms-font-su">split worksheet by selected column values</h1>
+    </header>
+    <main id="app-body" class="ms-welcome__main" style="display: none;">
+        <h2 class="ms-font-xl">Splitting Instructions</h2>
+        
+        <!-- Main content container -->
+        <div class="main-container">
+            <!-- Split Configuration Section -->
+            <div class="section modern-section">
+                <div class="unified-selection">
+                    <div role="button" id="select-header-and-column" class="ms-Button ms-Button--primary modern-button" style="margin-bottom: 20px;">
+                        <span class="ms-Button-label">Select Header & Split Column</span>
+                    </div>
+                    <p class="form-help">Click this button, then follow the instructions to select the header row and split column in Excel.</p>
+                </div>
+                
+                <div class="selection-summary" style="margin-bottom: 20px; padding: 15px; background-color: #f0f8ff; border-radius: 6px;">
+                    <h4>Selection Summary</h4>
+                    <div class="summary-grid">
+                        <div class="summary-item">
+                            <strong>Header Row:</strong>
+                            <span id="header-row-display">Not selected</span>
+                        </div>
+                        <div class="summary-item">
+                            <strong>Header Value:</strong>
+                            <span id="header-values-display">Not available</span>
+                        </div>
+                        <div class="summary-item">
+                            <strong>Split Column:</strong>
+                            <span id="column-display">Not selected</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="split-description">
+                    <p>Split current worksheet into multiple sheets based on selected column values. Each new sheet will contain only the rows with the same value in the selected column.</p>
+                </div>
+                
+                <div class="action-buttons">
+                    <div role="button" id="split-worksheet" class="ms-Button ms-Button--primary modern-button">
+                        <span class="ms-Button-label">Split Worksheet</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Progress and Status -->
+            <div class="section">
+                <h3 class="section-title">Progress & Status</h3>
+                <div id="progress-container" class="progress-indicator" style="display: none;">
+                    <div class="progress-message" id="progress-message"></div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+                    <div class="progress-status" id="progress-status"></div>
+                </div>
+                <div id="status-message" class="status-message"></div>
+            </div>
+            
+            <!-- Help -->
+            <div class="section">
+                <h3 class="section-title">How to Use</h3>
+                <ol class="help-steps">
+                    <li>Click "Select Header & Split Column" button</li>
+                    <li>First, select any cell in the header row</li>
+                    <li>Then, select any cell in the column you want to split by</li>
+                    <li>Click "Split Worksheet" to split into multiple sheets</li>
+                    <li>Check progress and status messages for updates</li>
+                </ol>
+            </div>
+        </div>
+        
+        <!-- Confirmation Dialog -->
+        <div id="confirm-dialog" class="dialog">
+            <div class="dialog-content">
+                <h3>Confirm Operation</h3>
+                <p id="confirm-message"></p>
+                <div class="dialog-buttons">
+                    <div role="button" id="confirm-yes" class="ms-Button ms-Button--primary">
+                        <span class="ms-Button-label">Yes</span>
+                    </div>
+                    <div role="button" id="confirm-no" class="ms-Button ms-Button--default">
+                        <span class="ms-Button-label">No</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

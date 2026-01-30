@@ -1,0 +1,490 @@
+/* 
+ * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
+ * See LICENSE in the project root for license information.
+ */
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+ul, ol {
+    margin: 0;
+    padding: 0;
+}
+
+.ms-welcome__header {
+    padding: 20px;
+    padding-bottom: 20px;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.ms-welcome__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 0 0;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.ms-welcome__main > h2 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 20px;
+}
+
+/* Main Container */
+.main-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Section Styles */
+.section {
+    width: 100%;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    box-sizing: border-box;
+}
+
+/* Modern Section Styles */
+.modern-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border: 1px solid #e3e6f0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.modern-section:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.12);
+    transform: translateY(-1px);
+}
+
+.section-title {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #0078d7;
+    box-shadow: 0 0 0 2px rgba(0,120,215,0.2);
+}
+
+/* Header Selection Styles */
+.header-selection {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Selection Controls Styles */
+.selection-controls {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Unified Selection Styles */
+.unified-selection {
+    margin-bottom: 20px;
+}
+
+.unified-selection h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.selection-summary h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Selection Grid Styles */
+.summary-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.summary-item {
+    flex: 1;
+    min-width: 120px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.summary-item strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 13px;
+}
+
+.summary-item span {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Form Help Text */
+.form-help {
+    font-size: 11px;
+    color: #666;
+    margin-top: 5px;
+    margin-bottom: 0;
+    line-height: 1.3;
+}
+
+/* Action Button */
+.action-button {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+}
+
+.action-button h4 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.action-button p {
+    margin-bottom: 15px;
+    color: #666;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+/* Button Styles */
+.ms-Button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.ms-Button--primary {
+    background-color: #0078d7;
+    color: white;
+    border: none;
+}
+
+.ms-Button--primary:hover {
+    background-color: #005a9e;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,120,215,0.3);
+}
+
+/* Modern Button Styles */
+.modern-button {
+    width: 100%;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,120,215,0.2);
+}
+
+.modern-button:hover {
+    box-shadow: 0 4px 8px rgba(0,120,215,0.3);
+    transform: translateY(-2px);
+}
+
+/* Checkbox Styles */
+.ms-CheckBox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.ms-CheckBox-input {
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.ms-CheckBox-label {
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+}
+
+.ms-Button--default {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #d0d0d0;
+}
+
+.ms-Button--default:hover {
+    background-color: #e0e0e0;
+}
+
+/* Progress Indicator */
+.progress-indicator {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.progress-message {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 8px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #0078d7;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.progress-status {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #666;
+    text-align: right;
+}
+
+/* Status Message */
+.status-message {
+    margin-top: 10px;
+    padding: 15px;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #333;
+}
+
+.status-message.error {
+    background-color: #fde7e9;
+    color: #d13438;
+}
+
+.status-message.success {
+    background-color: #e6f4ea;
+    color: #107c10;
+}
+
+/* Help Steps */
+.help-steps {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.help-steps li {
+    margin-bottom: 8px;
+    color: #666;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+/* Dialog Styles */
+.dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.dialog-content {
+    background-color: white;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    max-width: 400px;
+    width: 90%;
+}
+
+.dialog-content h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.dialog-content p {
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.dialog-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+/* Responsive Design */
+@media (min-width: 480px) {
+    .action-button {
+        min-width: 300px;
+    }
+}
+
+/* Optimize for Excel task pane narrow width */
+@media (max-width: 400px) {
+    /* Reduce padding */
+    .ms-welcome__main {
+        padding: 10px;
+    }
+    
+    .section {
+        padding: 12px;
+    }
+    
+    /* Reduce font sizes */
+    .ms-welcome__main > h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    
+    .section-title {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    
+    .ms-font-su {
+        font-size: 20px;
+    }
+    
+    /* Adjust summary items */
+    .summary-item {
+        flex: 1 1 100%;
+        min-width: 100%;
+        margin-bottom: 5px;
+    }
+    
+    /* Adjust buttons */
+    .ms-Button {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+    
+    .modern-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    /* Adjust status message */
+    .status-message {
+        padding: 12px;
+        font-size: 13px;
+        min-height: 50px;
+    }
+    
+    /* Adjust progress indicator */
+    .progress-message {
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+    
+    /* Adjust help steps */
+    .help-steps li {
+        font-size: 12px;
+        margin-bottom: 6px;
+    }
+    
+    /* Adjust header */
+    .ms-welcome__header {
+        padding: 15px;
+        padding-top: 60px;
+    }
+    
+    .ms-welcome__header img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Font Sizes */
+.ms-font-s {
+    font-size: 12px;
+    color: #666;
+}
+
+.ms-font-m {
+    font-size: 14px;
+}
+
+.ms-font-l {
+    font-size: 16px;
+}
+
+.ms-font-xl {
+    font-size: 20px;
+}
+
+.ms-font-su {
+    font-size: 24px;
+}
